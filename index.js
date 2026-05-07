@@ -8,12 +8,24 @@ const path = require("path");
 const app = express();
 const cors = require("cors");
 
-// Izinkan origin frontend lokal yang umum dipakai saat development
+// Izinkan origin frontend lokal dan production (GCP)
 app.use(cors({
-  origin: ['http://localhost', 'http://localhost:5173', 'http://127.0.0.1:5500',],
+  origin: [
+    'http://localhost', 
+    'http://localhost:5173', 
+    'http://127.0.0.1:5500',
+    'https://refined-cortex-442704-m0.et.r.appspot.com' // <-- Tambahkan URL frontend kamu di sini
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+
+// // Izinkan origin frontend lokal yang umum dipakai saat development
+// app.use(cors({
+//   origin: ['http://localhost', 'http://localhost:5173', 'http://127.0.0.1:5500',],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true
+// }));
 
 // Middleware untuk parsing JSON
 app.use(express.json());
