@@ -2,7 +2,7 @@
 // Notes App - Frontend JavaScript
 // =============================================
 
-const API_URL = '/api/catatan';
+const API_URL = 'https://be-tugas3-tcc-171-325409493725.us-central1.run.app/api/catatan';
 
 // Card color classes (cycle through pastel colors)
 const CARD_COLORS = [
